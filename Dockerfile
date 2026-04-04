@@ -1,2 +1,2 @@
 FROM nginx:1.29
-COPY . /usr/share/nginx/html
+ADD<tempkate> /usr/share/nginx/html
