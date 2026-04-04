@@ -3,7 +3,7 @@ kind: Ingress
 metadata:
   name: ingress-maison-multi
 spec:
-  ingressClassName: my-maison-multi-ingress
+  ingressClassName: alb
   rules:
     - http:
         paths:
