@@ -1,2 +1,2 @@
 FROM nginx:1.29
-ADD<tempkate> /usr/share/nginx/html
+ADD templatemo_611_maison_doree /usr/share/nginx/html
