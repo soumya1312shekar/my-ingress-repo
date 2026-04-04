@@ -3,10 +3,10 @@ kind: Ingress
 metadata:
   name: ingress-maison-multi
   annotations:
-    # Essential for generating a public AWS URL
     alb.ingress.kubernetes.io/scheme: internet-facing
-    # Recommended for EKS: routes traffic directly to Pod IPs
     alb.ingress.kubernetes.io/target-type: ip
+    # This line fixes the 404 by rewriting the path to '/' for your app
+    alb.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: alb
   rules:
