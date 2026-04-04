@@ -5,7 +5,7 @@ metadata:
   annotations:
     alb.ingress.kubernetes.io/scheme: internet-facing
     alb.ingress.kubernetes.io/target-type: ip
-    # This line fixes the 404 by rewriting the path to '/' for your app
+    # This line solves the 404 by sending requests to '/' inside your pod
     alb.ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: alb
