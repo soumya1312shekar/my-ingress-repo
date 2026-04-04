@@ -2,6 +2,11 @@ apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: ingress-maison-multi
+  annotations:
+    # Essential for generating a public AWS URL
+    alb.ingress.kubernetes.io/scheme: internet-facing
+    # Recommended for EKS: routes traffic directly to Pod IPs
+    alb.ingress.kubernetes.io/target-type: ip
 spec:
   ingressClassName: alb
   rules:
@@ -14,7 +19,7 @@ spec:
                 name: my-svc-maison
                 port:
                   number: 80
-          - path: /multi  # Corrected indentation and spelling
+          - path: /multi
             pathType: Prefix
             backend:
               service:
