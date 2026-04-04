@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-maison-dp
+spec:
+  minReadySeconds: 6
+  replicas: 4
+  selector:
+    matchLabels:
+      app: maison # Must match the label in the template below
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+  template:
+    metadata:
+      name: my-pod-maison
+      labels:        # Corrected indentation
+        app: maison  # Changed from 'gold' to 'maison' to match the selector
+    spec:
+      containers:
+        - name: my-container-maison # Renamed for consistency
+          image: "271071982991.dkr.ecr.ap-south-1.amazonaws.com/k8s/ingress:maison"
+          imagePullPolicy: Always
+          ports: 
+            - containerport: 80

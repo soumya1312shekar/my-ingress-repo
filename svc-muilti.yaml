@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-svc-muilti
+spec:
+  selector:
+    app: muilti
+  type: ClusterIP
+  ports:
+    - port: 80

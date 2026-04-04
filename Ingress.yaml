@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-maison-multi
+spec:
+  ingressClassName: my-maison-multi-ingress
+  rules:
+    - http:
+        paths:
+          - path: /maison
+            pathType: Prefix
+            backend:
+              service:
+                name: my-svc-maison
+                port:
+                  number: 80
+          - path: /multi  # Corrected indentation and spelling
+            pathType: Prefix
+            backend:
+              service:
+                name: my-svc-multi
+                port:
+                  number: 80
