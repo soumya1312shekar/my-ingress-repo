@@ -24,4 +24,4 @@ spec:
           image: "271071982991.dkr.ecr.ap-south-1.amazonaws.com/k8s/ingress:muilti"
           imagePullPolicy: Always
           ports: 
-            - containerport: 80
+            - containerPort: 80
