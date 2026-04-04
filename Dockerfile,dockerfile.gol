@@ -1,7 +1,5 @@
 FROM nginx:1.29
-COPY . /usr/share/nginx/html 
+ADD 2086_multi_color /usr/share/nginx/html 
 
 
->>>>dockerfile.gol
-FROM nginx:1.29
-COPY . /usr/share/nginx/html
+
